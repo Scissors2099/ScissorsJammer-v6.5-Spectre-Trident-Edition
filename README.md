@@ -64,6 +64,10 @@ Diseñado para calzar de forma plana, simétrica y con cunas de canto vertical d
 ### 📐 Ensamble Mecánico Final
 ![Gabinete Terminado](https://github.com/saldarriagalau-ux/ScissorsJammer-v6.5-Spectre-Trident-Edition/blob/main/ARMADOFINAL.jpeg)
 
+# ☕ Apoya el Desarrollo del Proyecto
+Si este firmware unificado te sirvió para tus auditorías o te ahorró horas en el banco de pruebas, ¡puedes invitarme un café de forma anónima para bancar los insumos del taller!
+[![Invitame un café en cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_1.svg)](https://cafecito.app/scissor)
+
 
 
 
