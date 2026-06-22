@@ -47,4 +47,4 @@ El sistema lee el sensor térmico interno del procesador y estampa la lectura fi
 Diseñado para calzar de forma plana, simétrica y con cunas de canto vertical dentro de un gabinete ergonómico tipo gamepad impreso en PLA/PETG por la **Artillery Genius**. Energizado de forma autónoma con una celda de litio 18650 de alta descarga.
 
 ---
-*Desarrollado con orgullo por la comunidad Maker y de Software Libre.* 🏆🛰️💥
+*Desarrollado con orgullo por la comunidad Maker y de Software Libre.* 🏆🛰️💥 --- stl pronto en thingsverse --- desarrollo
