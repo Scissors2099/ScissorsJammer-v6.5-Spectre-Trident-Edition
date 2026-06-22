@@ -53,7 +53,7 @@ Diseñado para calzar de forma plana, simétrica y con cunas de canto vertical d
 ## 📸 Bitácora Visual del Laboratorio
 
 ### 🛠️ Estado del Cableado en Protoboard
-![Estructura del Cableado]([CABLEADO.jpeg])
+![Estructura del Cableado](CABLEADO.jpeg)
 
 ### 🔋 Placas Calzadas en Postes de Chasis
 ![Montaje de Placas](https://github.com/saldarriagalau-ux/ScissorsJammer-v6.5-Spectre-Trident-Edition/blob/main/PLACASENBOX.jpeg)
