@@ -53,16 +53,16 @@ Diseñado para calzar de forma plana, simétrica y con cunas de canto vertical d
 ## 📸 Bitácora Visual del Laboratorio
 
 ### 🛠️ Estado del Cableado en Protoboard
-![Estructura del Cableado](CABLEADO.jpeg)
+![Estructura del Cableado]([CABLEADO.jpeg](https://github.com/saldarriagalau-ux/ScissorsJammer-v6.5-Spectre-Trident-Edition/blob/main/CABLEADO.jpeg))
 
 ### 🔋 Placas Calzadas en Postes de Chasis
-![Montaje de Placas](PLACASENBOX.jpeg)
+![Montaje de Placas](https://github.com/saldarriagalau-ux/ScissorsJammer-v6.5-Spectre-Trident-Edition/blob/main/PLACASENBOX.jpeg)
 
 ### ⚡ Primer Encendido y Verificación Lógica
-![Equipo Funcionando](FUNCIONANDO.jpeg)
+![Equipo Funcionando](https://github.com/saldarriagalau-ux/ScissorsJammer-v6.5-Spectre-Trident-Edition/blob/main/FUNCIONANDO.jpeg)
 
 ### 📐 Ensamble Mecánico Final
-![Gabinete Terminado](ARMADOFINAL.jpeg)
+![Gabinete Terminado](https://github.com/saldarriagalau-ux/ScissorsJammer-v6.5-Spectre-Trident-Edition/blob/main/ARMADOFINAL.jpeg)
 
 
 
