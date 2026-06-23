@@ -271,7 +271,7 @@ display.setTextSize(1);
 display.setTextColor(WHITE);
 display.setCursor(90, 0); 
 
-// Si el chip junta mucha fiebre por el ataque pesado, parpadea una alerta visual
+// Si el chip junta mucha fiebre alerta visual
 if (temp_celsius > 65.0 && (millis() / 300) % 2 == 0) {
   display.print("¡HOT!"); 
 } else {
