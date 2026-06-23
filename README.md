@@ -98,6 +98,12 @@ El uso del software, hardware, esquemas y la información contenida en este repo
 3. **Daños al equipo:** El mal uso de los componentes, voltajes incorrectos o configuraciones erróneas pueden dañar permanentemente su hardware y equipos periféricos.
 4. **Sin responsabilidad:** El autor o autores de este proyecto no se hacen responsables de ningún daño, lesión, multa, pérdida de datos o problemas legales derivados directa o indirectamente del uso de este material.
 
+---
+## ⚖️ Créditos y Licencia
+* Este proyecto es de código libre para la comunidad Maker. 
+* Basado en las librerías estándar de Arduino y con agradecimientos especiales a la comunidad de ciberseguridad Open Source por los algoritmos base de espectroscopía de radiofrecuencia (inspirado en desarrollos como RF-Clown de Cifertech).
+
+
 
 
 
