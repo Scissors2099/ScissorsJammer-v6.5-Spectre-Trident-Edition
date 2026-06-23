@@ -315,9 +315,9 @@ if (temp_celsius > 65.0 && (millis() / 300) % 2 == 0) {
       case 2: // 🚀 NUEVO MARCO DE PANEL: TRIPLE CAÑÓN CON MURO ELECTROMAGNÉTICO WIFi
         display.print("TRIPLE CANON ON");
         display.setCursor(10, 36); display.print("MURO CH 7 (2442MHz)");
-        display.setCursor(10, 48); display.print("M: 2,26,38,79 + BLE");
+        display.setCursor(10, 48); display.print("M: 2,26,38,79 + ch7");
         break;
     }
   }
-  display.display();
+  display.display
 }
