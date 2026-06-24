@@ -53,6 +53,15 @@ Para replicar con éxito el hardware del **ScissorsJammer v6.5**:
   * *Cámara NO (Normal Abierto):* Control lógico de estados.
   * *Cámara NC (Normal Cerrado):* a +3.3V` de las radios nrf24.
 
+---
+
+### 💿 Cómo Flashear el Pedal (Sin compilar código)
+
+1. Instala Python y abre una terminal.
+2. Instala esptool ejecutando:
+   pip install esptool
+3. Conecta tu placa por USB, descarga el archivo `esp32_jammer_v2.ino.merged.bin` y corre este comando (reemplaza `COM3` por tu puerto real):
+  esptool.py --port COM3 --chip esp32 write_flash 0x0 esp32_jammer_v2.ino.merged.bin
 
 ### 📐 Chasis y Ensamble
 * **Filamento PLA / PETG Premium (Color Naranja/Negro Táctico):** 
