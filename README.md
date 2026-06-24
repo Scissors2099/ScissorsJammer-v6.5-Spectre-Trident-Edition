@@ -55,7 +55,7 @@ Para replicar con éxito el hardware del **ScissorsJammer v6.5**:
 
 ---
 
-### 💿 Cómo Flashear el Pedal (Sin compilar código)
+### 💿 Cómo Flashear el Pedal (Sin compilar código) 
 
 1. Instala Python y abre una terminal.
 2. Instala esptool ejecutando:
