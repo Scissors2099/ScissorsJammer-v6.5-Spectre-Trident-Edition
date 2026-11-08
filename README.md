@@ -37,6 +37,15 @@ Con el modo 0 activo, una pulsación corta rota cíclicamente entre cuatro vista
 
 ---
 
+## ⚙️ Variantes de Firmware: ¿ `.bin` o `.ino` ?
+
+El repositorio incluye dos formas de cargar el cerebro del sistema dependiendo de si buscás velocidad operativa o profundizar en la telemetría analítica:
+
+- **Versión Binaria (`.bin` - Versión Compacta y de Despliegue Rápido):** Compilada a máxima velocidad de ejecución pura, ideal para flasheo directo relámpago con `esptool`. Elimina toda la grasa visual secundaria para priorizar ciclos de reloj estrictos en los núcleos del ESP32, enfocándose puramente en la pegada táctica sin distracciones en el display.
+- **Versión de Código Fuente (`.ino` - Edición Educativa y de Espectroscopía Avanzada):** Diseñada para laboratorios de radiofrecuencia y experimentación profunda. Integra toda la suite de visualizaciones en pantalla, gráficos de saturación en tiempo real, curvas de propagación y métricas de rendimiento ideales para entender visualmente cómo respira el éter electromagnético y auditar el comportamiento del espectro de forma didáctica.
+
+---
+
 ## 🔌 Conexión de Hardware Indestructible
 
 El diseño utiliza una solución de **Sincronismo Electromecánico Invertido** mediante un interruptor industrial de doble cámara independiente:
