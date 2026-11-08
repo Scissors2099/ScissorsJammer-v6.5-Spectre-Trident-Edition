@@ -9,13 +9,31 @@ Estación portátil autónoma de contra-inteligencia, auditoría analítica de e
 
 ### 🛰️ 1. ANALIZADOR WI-FI PASIVO (Suite de Inteligencia Lúdica)
 Operado de forma 100% pasiva a través de la antena interna del ESP32 sin emitir RF:
-* **[Sub 0] Ruido Crudo RF:** Gráfica original tipo Matrix con decaimiento lineal dinámico barriendo 125 canales a través de la Radio B secundaria.
+- **[Sub 0] Ruido Crudo RF:** Gráfica original tipo Matrix con decaimiento lineal dinámico barriendo 125 canales a través de la Radio B secundaria.
 
 ### 🎯 2. RADAR QUIRÚRGICO (Copia Fiel Original)
 Buscador de objetivos lógicos Wi-Fi que rastrea, fija y bloquea un SSID específico en el aire. Cuenta con indicador dinámico en vivo de objetivos (`Vistas: X / Y`) y blindaje de hilos en el Core 1 para impedir escapes fantasmas al menú principal.
 
 ### 🔥 3. ATAQUE TRIPLE CAÑÓN TRANSMISOR
 El soplete electromagnético definitivo. Activa el **Core 0** a 240 MHz constantes batiendo ciclos de CPU nativos en ensamblador y despliega dos radios NRF batiendo freq en espejo mediante buses SPI cruzados (`VSPI` / `HSPI`) combinados con un muro de concreto digital de 20 MHz. 
+
+---
+
+## 🖥️ Interfaz Visual y Pantalla OLED (128x64)
+
+El sistema cuenta con una telemetría fija y menús dinámicos proyectados en una pantalla SSD1306 de 128x64 píxeles:
+
+### 1. Cabecera Fija Superior
+- **Perímetro:** Recuadro delimitador (`drawRect`).
+- **Sensor de Temperatura:** Ubicado arriba a la derecha leyendo la temperatura interna del silicio (`temperatureRead()`). Si supera los **65 °C**, parpadea intermitentemente la leyenda `!HOT!` para advertir sobre fatiga térmica.
+- **Modo Activo:** Muestra el nombre del modo actual a la izquierda (`ESCANER RUIDO`, `RADAR: QUIRURG`, `ATAQUE: TRIPLE C`).
+
+### 2. Las 4 Sub-Pantallas del Modo 0 (Analizador Pasivo)
+Con el modo 0 activo, una pulsación corta rota cíclicamente entre cuatro vistas analíticas inferiores:
+- **Sub 0 (Osciloscopio / Matriz de Ruido):** 125 líneas verticales (`drawFastVLine`) que actúan como un ecualizador de radiofrecuencia en tiempo real mediante el comando `testRPD()`.
+- **Sub 1 (Lista RSSI):** Despliegue en texto plano de hasta 4 redes detectadas, mostrando sus SSID recortados y su intensidad de señal exacta en dBm.
+- **Sub 2 (Curvas Wi-Fi):** Representación gráfica tipo colinas o cúpulas de cobertura para los canales analógicos principales (1, 6 y 11), escalando círculos según la potencia de la señal.
+- **Sub 3 (Saturación Real %):** Mide la congestión porcentual de los canales críticos (`1`, `6`, `11`) contando paquetes promiscuos en el aire y renderizando barras de progreso dinámicas.
 
 ---
 
@@ -43,15 +61,15 @@ El diseño utiliza una solución de **Sincronismo Electromecánico Invertido** m
 ## 🛠️ Lista de Materiales (Bill of Materials - BOM)
 Para replicar con éxito el hardware del **ScissorsJammer v6.5**:
 
- +🧠 Microcontrolador y Pantalla
-* **1x ESP32 DevKit V1 (30 Pines):** 
-* **1x Pantalla OLED 0.96" I2C (SSD1306):** 
-+📡 Etapa de Radiofrecuencia (Dual nRF24)
-* **2x Módulos Transceptores nRF24L01+ (Versión con Antena Externa SMA):** 
-+🔌 Control Eléctrico e Interfaz
-* **1x Pulsador Push NC/NO Doble Cámara Mecánica:**
-  * *Cámara NO (Normal Abierto):* Control lógico de estados.
-  * *Cámara NC (Normal Cerrado):* a +3.3V` de las radios nrf24.
+- 🧠 **Microcontrolador y Pantalla**
+  - 1x ESP32 DevKit V1 (30 Pines)
+  - 1x Pantalla OLED 0.96" I2C (SSD1306)
+- 📡 **Etapa de Radiofrecuencia (Dual nRF24)**
+  - 2x Módulos Transceptores nRF24L01+ (Versión con Antena Externa SMA)
+- 🔌 **Control Eléctrico e Interfaz**
+  - 1x Pulsador Push NC/NO Doble Cámara Mecánica:
+    - *Cámara NO (Normal Abierto):* Control lógico de estados.
+    - *Cámara NC (Normal Cerrado):* Corte de potencia a `+3.3V` de las radios nRF24.
 
 ---
 
@@ -59,21 +77,9 @@ Para replicar con éxito el hardware del **ScissorsJammer v6.5**:
 
 1. Instala Python y abre una terminal.
 2. Instala esptool ejecutando:
-   pip install esptool
+   `pip install esptool`
 3. Conecta tu placa por USB, descarga el archivo `esp32_jammer_v2.ino.merged.bin` y corre este comando (reemplaza `COM3` por tu puerto real):
-  esptool.py --port COM3 --chip esp32 write_flash 0x0 esp32_jammer_v2.ino.merged.bin
-
-### 📐 Chasis y Ensamble
-* **Filamento PLA / PETG Premium (Color Naranja/Negro Táctico):** 
-* **Cables Dupont Hembra-Hembra / Pines Rígidos:** Para un conexionado interno.
-
----
-
-## 🛠️ Telemetría y Salud de Silicio
-El sistema lee el sensor térmico interno del procesador y estampa la lectura fija en la esquina del display OLED (**`53C`** estables en reposo). Si el chip junta fiebre por el asedio pesado del Triple Cañón, el firmware activa de forma automática una alerta intermitente que grita **`!HOT!`** en pantalla para preservar los transistores.
-
-## 📐 Chasis Portátil
-Diseñado para calzar de forma plana, simétrica y con cunas de canto vertical dentro de un gabinete ergonómico tipo gamepad impreso en PLA/PETG por la **Artillery Genius**. Energizado de forma autónoma con una celda de litio 18650.
+   `esptool.py --port COM3 --chip esp32 write_flash 0x0 esp32_jammer_v2.ino.merged.bin`
 
 ---
 
@@ -101,16 +107,15 @@ Si este firmware unificado te sirvió para tus auditorías o te ahorró horas en
 
 El uso del software, hardware, esquemas y la información contenida en este repositorio se realiza **bajo su propia cuenta y riesgo**. El proyecto se proporciona "tal cual", sin garantías de ningún tipo.
 
-# Puntos clave:
 1. **Uso Legal:** El usuario es responsable de cumplir con todas las leyes y regulaciones locales, nacionales e internacionales aplicables al uso y operación de equipos de radiofrecuencia.
-2. **Interferencia:** Los dispositivos modificados o construidos basados en este proyecto podrian emitir señales que causen interferencias perjudiciales a otros servicios de radio autorizados aunque su potencia es limitada por su diseño de hw hobbista su uso debe limitarse a entornos controlados y de laboratorio, testing.
+2. **Interferencia:** Los dispositivos modificados o construidos basados en este proyecto podrían emitir señales que causen interferencias perjudiciales a otros servicios de radio autorizados; aunque su potencia está limitada por su diseño de HW hobbista, su uso debe limitarse a entornos controlados, de laboratorio y testing.
 3. **Daños al equipo:** El mal uso de los componentes, voltajes incorrectos o configuraciones erróneas pueden dañar permanentemente su hardware y equipos periféricos.
 4. **Sin responsabilidad:** El autor o autores de este proyecto no se hacen responsables de ningún daño, lesión, multa, pérdida de datos o problemas legales derivados directa o indirectamente del uso de este material.
 
 ---
 ## ⚖️ Créditos y Licencia
-* Este proyecto es de código libre para la comunidad Maker. 
-* Basado en las librerías estándar de Arduino y con agradecimientos especiales a la comunidad de ciberseguridad Open Source por los algoritmos base de espectroscopía de radiofrecuencia (inspirado en desarrollos como RF-Clown de Cifertech).
+- Este proyecto es de código libre para la comunidad Maker. 
+- Basado en las librerías estándar de Arduino y con agradecimientos especiales a la comunidad de ciberseguridad Open Source por los algoritmos base de espectroscopía de radiofrecuencia (inspirado en desarrollos como RF-Clown de Cifertech).
 
 
 
